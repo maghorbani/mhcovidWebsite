@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" href='{% static "frontend/bootstrap.min.css" %}' />
+    <title>COVID-19 Prediction</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script src='{% static "frontend/main.js" %}'></script>
+    <script src='{% static "frontend/jquery-3.5.1.slim.min.js" %}'></script>
+    <script src='{% static "frontend/popper.min.js" %}'></script>
+    <script src='{% static "frontend/bootstrap.min.js" %}'></script>
+  </body>
+</html>
