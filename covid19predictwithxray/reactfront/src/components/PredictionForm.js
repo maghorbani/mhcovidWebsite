@@ -85,13 +85,28 @@ export class PredictionForm extends Component {
   handleReset = () => {
     this.setState({ activeStep: 0 });
   };
-
+  getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      var cookies = document.cookie.split(";");
+      for (var i = 0; i < cookies.length; i++) {
+        var cookie = jQuery.trim(cookies[i]);
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
   handleFileChange = (e) => {
     this.setState({ fileUploaded: false });
     let files = e.target.files;
 
+    var csrftoken = this.getCookie("csrftoken");
     var formData = new FormData();
     formData.append("file", files[0]);
+    formData.append("csrfmiddlewaretoken", csrftoken);
     this.props.uploadImage(formData);
   };
 

@@ -1,6 +1,9 @@
 from .models import Image
 from rest_framework import viewsets, permissions
 from .serializers import ImageSerializer
+from django.shortcuts import get_object_or_404
+from rest_framework.response import Response
+from django.http import HttpResponse
 # from MHCovid import MHCovid
 from .MHCovid import MHCovid
 import os
@@ -49,3 +52,28 @@ class ImageViewSet(viewsets.ModelViewSet):
                             score=pr*100)
         else:
             serializer.save(score=pr*100)
+
+    def retrieve(self, request, pk=None):
+        queryset = Image.objects.all()
+        image = get_object_or_404(queryset, pk=pk)
+        # print(request.query_params)
+        dirp = os.path.abspath(os.path.join(
+            os.path.dirname(__file__), '..'))
+        fileName = os.path.join(dirp, 'media', image.file.name)
+        if('imagefile' in request.query_params):
+            image_data = open(fileName, "rb").read()
+            return HttpResponse(image_data, content_type="image/png")
+
+        serializer = ImageSerializer(image)
+        return Response(serializer.data)
+
+    def list(self, request):
+        queryset = Image.objects.all()
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = ImageSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = ImageSerializer(queryset, many=True)
+        return Response(serializer.data)

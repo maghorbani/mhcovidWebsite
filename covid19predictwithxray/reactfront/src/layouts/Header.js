@@ -149,9 +149,7 @@ export class Header extends Component {
               </Grid>
 
               <Grid item>
-                <div>
-                  <LoginForm />
-                </div>
+                <div>{/* <LoginForm /> */}</div>
               </Grid>
             </Grid>
           </Toolbar>
@@ -190,7 +188,13 @@ export class Header extends Component {
               <ListItemIcon>
                 <GitHubIcon />
               </ListItemIcon>
-              <ListItemText primary="git repository" />
+              <ListItemText primary="Git repository" />
+            </ListItem>
+            <ListItem button component="a" href="/acknowledgement">
+              <ListItemIcon>
+                <StarsIcon />
+              </ListItemIcon>
+              <ListItemText primary="Acknowledgement" />
             </ListItem>
             <ListItem button component="a" href="/aboutus">
               <ListItemIcon>

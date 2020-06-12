@@ -11,6 +11,6 @@ from rest_framework import routers
 from .api import ImageViewSet
 
 router = routers.DefaultRouter()
-router.register('images', ImageViewSet, 'images')
+router.register('images', ImageViewSet, basename='images')
 
 urlpatterns = router.urls

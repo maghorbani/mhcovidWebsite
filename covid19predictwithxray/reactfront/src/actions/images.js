@@ -9,6 +9,7 @@ export const uploadImage = (form_data) => (dispatch) => {
     .post("/api/images/", form_data, {
       headers: {
         "Content-Type": "multipart/form-data",
+        "X-CSRFToken": form_data["csrfmiddlewaretoken"],
       },
     })
     .then((res) => {

@@ -26,14 +26,15 @@ export class Footer extends Component {
             <div className="col-md-6 mb-md-0 mb-3">
               <h5 className="text-uppercase font-weight-bold">Terms of Use</h5>
               <p>
-                This application is bing provided under MIT opensource license,
-                you can read the code and develope it and use it for your own
-                puposes, you can find the git repository links{" "}
-                <Link to="/repos">HERE</Link> <br />
-                <u>
+                This application is provided by two students of Amirkabir
+                University of Technology by their own works. It is planned to be
+                free to everyone across the world. Feel free to share it to
+                anyone who may need it and use it. you can find the git
+                repository links <Link to="/repos">HERE</Link>
+                {/* <u>
                   this app is provided AS IS and the producers have no
                   commitement to any use of this app of any kind.
-                </u>
+                </u> */}
               </p>
             </div>
           </div>

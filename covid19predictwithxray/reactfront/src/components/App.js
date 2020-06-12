@@ -11,6 +11,8 @@ import PropTypes from "prop-types";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
 import Error404 from "./pages/Error404";
+import GitRepos from "./pages/GitRepos";
+import Acknowledgement from "./pages/Acknowledgement";
 
 const styles = (theme) => ({
   root: {
@@ -60,6 +62,12 @@ class App extends Component {
               </Route>
               <Route path="/AboutUs">
                 <AboutUs />
+              </Route>
+              <Route path="/Repos">
+                <GitRepos />
+              </Route>
+              <Route path="/acknowledgement">
+                <Acknowledgement />
               </Route>
               <Route>
                 <Error404 />
