@@ -19,9 +19,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('reactfront.urls')),
     path('admin/', admin.site.urls),
-    path('', include('records.urls')),
+    path('api/', include('records.urls')),
+    path('', include('reactfront.urls')),
 ]
 
 # if settings.DEBUG:
