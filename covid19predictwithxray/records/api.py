@@ -35,7 +35,7 @@ class ImageViewSet(viewsets.ModelViewSet):
             model_obj = serializer.save()
 
         matplotlib.use('agg')
-        matplotlib.pyplot.switch_backend('Agg')
+        # matplotlib.pyplot.switch_backend('Agg')
 
         fileName = model_obj.file.name
         mh = MHCovid()
