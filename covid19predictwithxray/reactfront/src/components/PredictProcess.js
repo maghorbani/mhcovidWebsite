@@ -30,9 +30,9 @@ export class PredictProcess extends Component {
     const { predicted, score } = this.state;
     const { classes, theme } = this.props;
     const severity = clsx({
-      success: score <= 50,
-      warning: score <= 80 && score > 50,
-      error: score > 80,
+      success: score <= 20,
+      warning: score < 50 && score > 20,
+      error: score >= 50,
     });
 
     return (
@@ -47,8 +47,10 @@ export class PredictProcess extends Component {
         {predicted && (
           <Fragment>
             <Alert severity={severity}>
-              The Probeblity that you have COVID-19 is{" "}
+              The chance of being affected by COVID-19 is{" "}
               {(Math.round(score * 100) / 100).toFixed(2)}
+              <br />
+              {score >= 50 && "Please refer to a doctor as soon as possible"}
             </Alert>
           </Fragment>
         )}

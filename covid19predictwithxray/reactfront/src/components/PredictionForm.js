@@ -62,6 +62,7 @@ export class PredictionForm extends Component {
         this.setState({
           fileUploaded: true,
         });
+        this.handleNext();
       }
       if (this.props.prediction_res.name != "") {
         // this.handleNext();

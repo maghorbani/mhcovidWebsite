@@ -10,6 +10,7 @@ import PropTypes from "prop-types";
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import AboutUs from "./pages/AboutUs";
+import Error404 from "./pages/Error404";
 
 const styles = (theme) => ({
   root: {
@@ -59,6 +60,9 @@ class App extends Component {
               </Route>
               <Route path="/AboutUs">
                 <AboutUs />
+              </Route>
+              <Route>
+                <Error404 />
               </Route>
             </Switch>
             <Footer />
