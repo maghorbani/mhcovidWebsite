@@ -38,7 +38,7 @@ export class Footer extends Component {
             </div>
           </div>
 
-          <div class="footer-copyright text-center py-3">
+          <div className="footer-copyright text-center py-3">
             © 2020 Licensed With:
             <a href="https://opensource.org/licenses/MIT">
               {" "}

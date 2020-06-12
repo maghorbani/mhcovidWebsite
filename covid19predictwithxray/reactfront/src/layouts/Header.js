@@ -25,6 +25,7 @@ import LoginForm from "./LoginForm";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import InfoIcon from "@material-ui/icons/Info";
 import StarsIcon from "@material-ui/icons/Stars";
+import GitHubIcon from "@material-ui/icons/GitHub";
 import { withRouter } from "react-router-dom";
 
 import { drawerToggle } from "../actions/ui";
@@ -185,11 +186,11 @@ export class Header extends Component {
               </ListItemIcon>
               <ListItemText primary="Prediction" />
             </ListItem>
-            <ListItem button component="a" href="/acknowledgement">
+            <ListItem button component="a" href="/repos">
               <ListItemIcon>
-                <StarsIcon />
+                <GitHubIcon />
               </ListItemIcon>
-              <ListItemText primary="acknowledgement" />
+              <ListItemText primary="git repository" />
             </ListItem>
             <ListItem button component="a" href="/aboutus">
               <ListItemIcon>
