@@ -92,7 +92,9 @@ export class PredictProcess extends Component {
                   >
                     <Alert severity={severity}>
                       The chance of being affected by COVID-19 is{" "}
-                      {(Math.round(score * 100) / 100).toFixed(2)}
+                      <strong>
+                        {(Math.round(score * 100) / 100).toFixed(2)}
+                      </strong>
                       <br />
                       {score >= 50 &&
                         "Please refer to a doctor as soon as possible"}

@@ -173,6 +173,17 @@ export class PredictionForm extends Component {
                   </Paper>
                 )}
               </div>
+              <Typography style={{ marginTop: "20px" }} variant="subtitle2">
+                <strong>Note: </strong>
+                Since we had about 6000 chest X-ray images to train on, and
+                because of usage of deep learning in prediction and challenges
+                on interpretability, our prediction may not be true in all
+                cases. We had an accuray of about 98.4% on about 1000 test
+                cases. So we strongly recommend you to refer to a doctor for
+                more accurate predictions. We appreciate any doctor or
+                organization that help us with more labeled chest X-ray images
+                to improve our system.
+              </Typography>
             </div>
             <div className="col-sm-2 col-md-2"></div>
           </div>

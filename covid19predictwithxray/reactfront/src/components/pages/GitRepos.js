@@ -11,9 +11,12 @@ import Typography from "@material-ui/core/Typography";
 const styles = (theme) => ({
   root: {
     marginLeft: "20px",
+    paddingTop: "100px",
+  },
+  demo: {
     display: "flex",
     height: "100%",
-    paddingTop: "100px",
+    flexDirection: "column",
     alignItems: "flex-start",
   },
 });
@@ -54,13 +57,6 @@ export class GitRepos extends Component {
             </ListItem>
           </List>
         </div>
-
-        {/* Special thanks to... 1- Dr.Menhaj, Dr.Talebi and Dr.Sharifi for their
-        supports... 2- Dr.Mirahmadi, Dr.Javadi, Dr.Babakhani for their medical
-        advices... 3- Dr.Ashnaee, Mr.Alipur for their supports... 4- Those who
-        gather datasets of COVID-19 chest X-ray on github and kaggle
-        https://github.com/ieee8023/covid-chestxray-dataset
-        https://www.kaggle.com/praveengovi/coronahack-chest-xraydataset */}
       </div>
     );
   }

@@ -11,9 +11,12 @@ import Typography from "@material-ui/core/Typography";
 const styles = (theme) => ({
   root: {
     marginLeft: "20px",
+    paddingTop: "100px",
+  },
+  demo: {
     display: "flex",
     height: "100%",
-    paddingTop: "100px",
+    flexDirection: "column",
     alignItems: "flex-start",
   },
 });

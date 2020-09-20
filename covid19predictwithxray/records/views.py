@@ -16,14 +16,12 @@ class ImageUploadView(APIView):
     permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
-        print(request.data)
         image_serializer = ImageSerializer(data=request.data)
 
         if image_serializer.is_valid():
             image_serializer.save()
             return Response(image_serializer.data, status=status.HTTP_201_CREATED)
         else:
-            print(image_serializer.errors)
             return Response(image_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
